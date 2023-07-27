@@ -1,0 +1,6 @@
+<!-- lib/timesheet_app_web/templates/employee/show.html.eex -->
+<h1>Employee Details</h1>
+<p>Name: <%= @employee.name %></p>
+<p>Email: <%= @employee.email %></p>
+<p>Position: <%= @employee.position %></p>
+<!-- Display other details as needed -->

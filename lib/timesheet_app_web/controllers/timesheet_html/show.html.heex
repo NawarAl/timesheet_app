@@ -1,0 +1,16 @@
+<.header>
+  Timesheet <%= @timesheet.id %>
+  <:subtitle>This is a timesheet record from your database.</:subtitle>
+  <:actions>
+    <.link href={Routes.timesheet_path(@conn, :edit, @timesheet.id)}>
+      <.button>Edit timesheet</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Date"><%= @timesheet.date %></:item>
+  <:item title="Hours worked"><%= @timesheet.hours_worked %></:item>
+</.list>
+
+<.back navigate={Routes.timesheets_path(@conn, :index)}>Back to timesheets</.back>

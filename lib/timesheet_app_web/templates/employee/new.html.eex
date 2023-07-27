@@ -1,0 +1,27 @@
+<!-- lib/timesheet_app_web/templates/employee/new.html.eex -->
+<h1>New Employee</h1>
+<%= form_for @changeset, Routes.employee_path(@conn, :create), [as: :employee], fn f -> %>
+  <div class="field">
+    <%= label f, :name %>
+    <%= text_input f, :name %>
+    <%= error_tag f, :name %>
+  </div>
+
+  <div class="field">
+    <%= label f, :email %>
+    <%= text_input f, :email %>
+    <%= error_tag f, :email %>
+  </div>
+
+  <div class="field">
+    <%= label f, :position %>
+    <%= text_input f, :position %>
+    <%= error_tag f, :position %>
+  </div>
+
+  <!-- Add more fields if needed -->
+
+  <div class="actions">
+    <%= submit "Create Employee" %>
+  </div>
+<% end %>

@@ -1,0 +1,8 @@
+<.header>
+  New Timesheet
+  <:subtitle>Use this form to manage timesheet records in your database.</:subtitle>
+</.header>
+
+<.timesheet_form changeset={@changeset} action={Routes.timesheets_path(@conn, :create)} />
+
+<.back navigate={Routes.timesheets_path(@conn, :index)}>Back to timesheets</.back>

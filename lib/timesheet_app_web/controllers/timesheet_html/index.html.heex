@@ -1,0 +1,24 @@
+<.header>
+  Listing Timesheets
+  <:actions>
+    <.link href={Routes.timesheets_path(@conn, :new)}>
+      <.button>New Timesheet</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="timesheets" rows={@timesheets} row_click={&JS.navigate(Routes.timesheet_path(@conn, :show, &1.id))}>
+  <:col :let={timesheet} label="Date"><%= timesheet.date %></:col>
+  <:col :let={timesheet} label="Hours worked"><%= timesheet.hours_worked %></:col>
+  <:action :let={timesheet}>
+    <div class="sr-only">
+      <.link navigate={Routes.timesheet_path(@conn, :show, timesheet.id)}>Show</.link>
+    </div>
+    <.link navigate={Routes.timesheet_path(@conn, :edit, timesheet.id)}>Edit</.link>
+  </:action>
+  <:action :let={timesheet}>
+    <.link href={Routes.timesheet_path(@conn, :delete, timesheet.id)} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>
